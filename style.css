@@ -513,18 +513,22 @@ p{
     i{
         margin: 2px;
         color: #ebb8b8;
+        font-size: 16px;
     }
     p{
         color: #eee;
+        font-size: 12px;
     }
 } 
 .cont .one .ph{
     i{
         margin: 2px;
         color: #ebb8b8;
+        font-size: 16px;
     }
     p{
         color: #eee;
+        font-size: 12px;
     }
 }
 .one .ph{
