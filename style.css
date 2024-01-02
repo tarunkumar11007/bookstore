@@ -479,21 +479,69 @@ p{
     
     margin: 10px;
     i{
-        margin-top: 3rem;
+        margin-top: 3.5rem;
         margin-left: 2rem;
-        font-size: 20px;
+        font-size: 30px;
         color: #fff;
     }
 }
 .cont .one{
     h1{
-        color: #fff;
+        color: #ffffff;
+        margin-top: 2px;
+        font-size: 20px;
     }
-    p{
+    .ad{
+        color: #ec1a1a;
+    }
+   
+}
+.cont .one .ad{
+    color: #ec1a1a;
+}
+
+.cont .one{
+    p
+    {
         margin-top: 10px;
         color: #ffffff;
+        font-size: 16px;
     }
     
+}
+.cont .one .mail{
+    i{
+        margin: 2px;
+        color: #ebb8b8;
+    }
+    p{
+        color: #eee;
+    }
+} 
+.cont .one .ph{
+    i{
+        margin: 2px;
+        color: #ebb8b8;
+    }
+    p{
+        color: #eee;
+    }
+}
+.one .ph{
+    display: flex;
+}
+.cont .one .mail{
+    i:hover{
+        margin: 2px;
+        color: #f51c1c;
+    }
+    p:hover{
+        color: #fa2b2b;
+    }
+    
+} 
+.one .mail{
+    display: flex;
 }
 .cont{
     hr{
