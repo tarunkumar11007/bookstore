@@ -481,7 +481,7 @@ p{
     i{
         margin-top: 3.5rem;
         margin-left: 2rem;
-        font-size: 30px;
+        font-size: 20px;
         color: #fff;
     }
 }
@@ -539,8 +539,12 @@ p{
         margin: 2px;
         color: #f51c1c;
     }
-    p:hover{
-        color: #fa2b2b;
+    
+} 
+.cont .one .ph{
+    i:hover{
+        margin: 2px;
+        color: #f51c1c;
     }
     
 } 
