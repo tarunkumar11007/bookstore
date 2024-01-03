@@ -4,8 +4,24 @@
         <meta charset="UTF-8">
         <title>BOOKSTORE</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="slide.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Poppins',sans-serif;
+			}
+
+			html, body {
+				height: 100%;
+				width: 100;
+				background-image: url(images/7.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+		</style>
     </head>
     <body>
         <div class="header">
@@ -35,27 +51,16 @@
                 </div>
             </div>
         </div>
+
         <!-- Slider section -->
 	<section class="slider">
 		<div class="container">
-		
-			<div class="slider" data-slider>
-			  
+			<div class="slider" data-slider>  
 			<div class="slider-title">
 				<div>
 					<p class="main_title">Our Collections</p>
 				</div>
-							  
-				<div class="slider__buttons">
-				  <button class="slider__button" data-slider-prev disabled>
-					<i class="fa fa-angle-left"></i>
-				  </button>
-				  <button class="slider__button" data-slider-next>
-					<i class="fa fa-angle-right"></i>
-				  </button>
-				</div>
 			</div>
-			  
 				<ul class="slider__track" data-slider-track>
 				  <li>
 					<div class="slide">
@@ -147,6 +152,14 @@
 					</div>
 				  </li>
 				</ul>
+				<div class="slider__buttons">
+					<button class="slider__button" data-slider-prev disabled>
+					  <i class="fa fa-angle-left"></i>
+					</button>
+					<button class="slider__button" data-slider-next>
+					  <i class="fa fa-angle-right"></i>
+					</button>
+				</div>
 				<div class="btns">
 					<button>SHOW ALL</button>
 				</div>
@@ -157,16 +170,15 @@
 	<!-- Slider section End -->
 
 	<!-- About section -->
-	 
 	<div class="sect1">
 		<div class="about" >  
 			<h1>About us</h1>
 			<div class="a-box">
-				<p>Bookstore is India’s Largest and Cheapest Online Bookstore offering 40+ Million selections.</p>
-				<p>Dear readers,<br>We offer a huge collection of books from diverse categories of Fiction, Non-fiction,
+				<div class="par"><p>Bookstore is India’s Largest and Cheapest Online Bookstore offering 40+ Million selections.</p></div>
+				<p>Dear readers,<br><br>We offer a huge collection of books from diverse categories of Fiction, Non-fiction,
 					 Biographies, History, Religion, Self-Help, etc. We also offer a collection of Investments and
-					  Management, Computers, Engineering, Medical, College and School <br>text reference books.
-					  <br>We strive for customer satisfaction by offering a user-friendly search engine, efficient payment options and seamless delivery systems.
+					  Management, Computers, Engineering, Medical, <br>College and School text reference books.
+					  <br><br>We strive for customer satisfaction by offering a user-friendly search engine, efficient payment options and seamless delivery systems.
 					   Apart from all this, we also provide great deals and discounts on our products. <br>
 					   All the Publishers, Distributors and Authors around the country are welcome to partner with us and grow the Bookstore family. We would like to thank our
 					    customers for shopping with us. You can write to us on our e-mail id to share any <br>suggestions or feedback you might have regarding our website or services.
@@ -174,14 +186,9 @@
 			</div>	
 		</div>
 	</div>
-		
-	
 	<!-- about section End -->
 	
-	 <!-- footer section -->
-	 
-	
-			  
+	 <!-- footer section -->		  
 	 <div class="main">
 		<hr>
 		<!--------------------column-one------------------------------------------------->
@@ -241,10 +248,52 @@
 		<hr>
 		<div class="c-right"><p>Copyright © 2024 . Bookstore.com. All Rights Reserved</p></div>
 	</div>		
-	
 	<!-- footer section End -->
 	
-	
-	<script src="script.js"></script>
+	<script>
+
+		const slider = document.querySelector("[data-slider]");
+
+		const track = slider.querySelector("[data-slider-track]");
+		const prev = slider.querySelector("[data-slider-prev]");
+		const next = slider.querySelector("[data-slider-next]");
+
+		if (track) {
+		prev.addEventListener("click", () => {
+			next.removeAttribute("disabled");
+
+			track.scrollTo({
+			left: track.scrollLeft - track.firstElementChild.offsetWidth,
+			behavior: "smooth"
+			});
+		});
+
+		next.addEventListener("click", () => {
+			prev.removeAttribute("disabled");
+
+			track.scrollTo({
+			left: track.scrollLeft + track.firstElementChild.offsetWidth,
+			behavior: "smooth"
+			});
+		});
+
+		track.addEventListener("scroll", () => {
+			const trackScrollWidth = track.scrollWidth;
+			const trackOuterWidth = track.clientWidth;
+
+			prev.removeAttribute("disabled");
+			next.removeAttribute("disabled");
+
+			if (track.scrollLeft <= 0) {
+			prev.setAttribute("disabled", "");
+			}
+
+			if (track.scrollLeft === trackScrollWidth - trackOuterWidth) {
+			next.setAttribute("disabled", "");
+			}
+		});
+		}
+
+	</script>
     </body>
 </html>
